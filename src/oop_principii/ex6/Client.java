@@ -26,6 +26,7 @@ public class Client {
     public void listAccounts(){
         for (int i=0; i < numberOfAccounts;i++){
             BankAccount account = accounts[i];
+            System.out.println("Account number " + account.getAcoountNumber() + " Balance " + account.getBalance());
 
         }
     }
