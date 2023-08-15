@@ -9,8 +9,8 @@ public class Dog extends Animal {
     public void greeting() {
         System.out.println(this.getName()+ " woof");
     }
-    public void greeting(Dog anotherGod){
-        System.out.println(this.getName() + "face woof catre " + anotherGod.getName());
+    public void greeting(Dog anotherDog){
+        System.out.println(this.getName() + "face woof catre " + anotherDog.getName());
 
     }
 

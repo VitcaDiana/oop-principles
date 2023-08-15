@@ -15,7 +15,7 @@ public class Main {
 //dog.greeting(securityDog);
 //securityDog.greeting(dog);
 
-        Animal cat = new Cat("pisi");
+        Animal cat = new Cat("pisi","de casa");
         cat.greeting();
         Animal dog = new Dog("Azor");
         dog.greeting();
@@ -44,7 +44,7 @@ public class Main {
         int option = scanner.nextInt();
         switch (option) {
             case 1:
-                return new Cat("pisi");
+                return new Cat("pisi","de casa");
             case 2:
                 return new Dog("azor");
             case 3:
