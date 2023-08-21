@@ -69,8 +69,8 @@ public class CinemaHall {
     public void showStatistics() {
         int totalSeats = numberOfRows * numberOfCols;
         double occupancyPercentage = (double) totalSeatsSold / totalSeats * 100; //aici se face casting
-        int currentSum = totalSeatsSold * getPrice(row,col);
-        int maxSum = totalSeats * getPrice(row,col);
+        int currentSum = totalSeatsSold * ticketPrice;
+        int maxSum = totalSeats * ticketPrice;
 
         System.out.println("Bilete vandute: " + totalSeatsSold);
         System.out.println("Procentaj locuri ocupate: " + occupancyPercentage + "%");
@@ -91,7 +91,7 @@ public class CinemaHall {
         int totalSeats = numberOfRows * numberOfCols;
         if (totalSeats <= 60){
             return ticketPrice = 10;
-        }else if (row < totalSeats/2){
+        }else if (row < numberOfRows/2){
                 return ticketPrice = 10;
             }else {
                 return ticketPrice = 20;
