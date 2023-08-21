@@ -4,26 +4,40 @@ public class StudentAccount extends BankAccount {
     private final double maxDepositAmount;
 
     @Override
-    public double withdraw(double amount) {
+    public double withdraw(double amount) throws OPerationNotSupportedException {
         //se pot retrage maxim câți bani sunt în cont în momentul retragerii
-        if (amount <= getBalance()){
-            setBalance(getBalance()-amount);
+        if (amount >= getBalance()) {
+            throw new OPerationNotSupportedException("you can not withdraw more than you have from a student account");
+
         }
-      return amount;
+        setBalance(getBalance() - amount);
+        return getBalance();
     }
 
     @Override
-    public double deposit(double amount) {
+    public double deposit(double amount) throws OPerationNotSupportedException {
         //se pot depune maxim “maxDepositAmount” bani o dată
-        if (amount <= maxDepositAmount){
-            setBalance(getBalance() +amount);
+        if (amount >= maxDepositAmount) {
+     throw new OPerationNotSupportedException("you can not deposit more than " + maxDepositAmount);
+
         }
-        return amount;
+        setBalance(getBalance() + amount);
+        return getBalance();
     }
 
     public StudentAccount(double balance, String acountNumber, double maxDepositAmount) {
-        super( balance, acountNumber);
+        super(balance, acountNumber);
         this.maxDepositAmount = maxDepositAmount;
     }
 
+    @Override
+    public String toString() {
+        return "StudentAccount{" +
+                "maxDepositAmount=" + maxDepositAmount +
+                "balance= " + getBalance() +
+                "AccountNumber= " + getAcoountNumber() +
+                '}';
+
+
+    }
 }

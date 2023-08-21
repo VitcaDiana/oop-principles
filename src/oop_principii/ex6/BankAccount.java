@@ -10,8 +10,8 @@ public abstract class BankAccount {
         this.acountNumber = acountNumber;
     }
 
-    public abstract double withdraw(double amount) ;
-    public abstract double deposit(double amount);
+    public abstract double withdraw(double amount) throws  OPerationNotSupportedException ;
+    public abstract double deposit(double amount) throws OPerationNotSupportedException;
 
     public double getBalance() {
         return balance;
@@ -27,5 +27,13 @@ public abstract class BankAccount {
 
     public void setAcoountNumber(String acoountNumber) {
         this.acountNumber = acoountNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "balance=" + balance +
+                ", acountNumber='" + acountNumber + '\'' +
+                '}';
     }
 }
