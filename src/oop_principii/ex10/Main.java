@@ -18,8 +18,10 @@ public class Main {
             cinemaHall.buyTicket(10,7);
             System.out.println(cinemaHall.getPrice(10,7));
             cinemaHall.printGrid();
+            cinemaHall.showStatistics();
             cinemaHall.buyTicket(6, 5);
             System.out.println(cinemaHall.getPrice(6, 5));
+
 
 
 
